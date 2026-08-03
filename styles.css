@@ -643,10 +643,32 @@ footer .topline { position:absolute; inset-inline:0; top:0; height:1px; backgrou
   margin-left: 0;
   text-align: center;
 }
+.footer-ig-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  margin-top: .75rem;
+  padding: .3rem .75rem;
+  border-radius: 9999px;
+  background: rgba(212,177,106,.12);
+  border: 1px solid rgba(212,177,106,.35);
+  color: var(--gold);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .3s, color .3s, transform .3s;
+}
+.footer-ig-badge:hover {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
 @media (min-width:768px){
   .footer-brand-col { margin-top: -65px; align-items: flex-start; }
   .footer-logo-img { width: 220px; margin: 0; }
   .footer-slogan { margin-top: -75px; margin-left: 80px; font-size: 11px; text-align: left; }
+  .footer-ig-badge { margin-left: 80px; margin-top: .5rem; }
 }
 
 /* Collage mobile fix - prevent badge from overflowing */
