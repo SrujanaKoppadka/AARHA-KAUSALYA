@@ -16,12 +16,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/hero-pdf.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="data:," />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/aarha%20logo.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="images/aarha%20logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/aarha%20logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" />
-  <link rel="stylesheet" href="styles.css?v=7.0" />
+  <link rel="stylesheet" href="styles.css?v=25.0" />
 </head>
 
 <body>
@@ -210,7 +212,7 @@
       </div>
 
       <div class="two">
-        <button class="frame ring-frame" data-lightbox="images/g1.webp" style="border:0;padding:0;cursor:zoom-in">
+        <button class="frame ring-frame layout-plan-frame" data-lightbox="images/g1.webp" style="border:0;padding:0;cursor:zoom-in">
           <img src="images/g1.webp" alt="Layout Plan" />
           <div class="fade"></div>
           <div class="layout-tag">Layout Plan</div>
@@ -343,6 +345,13 @@
     <img class="bg-img" src="images/g43.webp" alt="" />
     <div class="topline"></div>
 
+    <div class="footer-brand-top">
+      <div class="footer-brand footer-brand-col">
+        <img src="images/aarha%20logo%20white.png" alt="Aarha Logo" class="footer-logo-img" />
+        <span class="s footer-slogan">- BUY A DREAM,<br/>THAT'S PLOTTED</span>
+      </div>
+    </div>
+
     <div class="footer-hero" data-reveal>
       <div>
         <h2>PREMIUM <span class="gold-text">GBDA APPROVED</span> PLOTS ON RAMANAGARA-MAGADI HIGHWAY</h2>
@@ -365,7 +374,7 @@
     </div>
 
     <div class="footer-cols">
-      <div>
+      <div class="footer-brand-desktop-wrap">
         <div class="footer-brand footer-brand-col">
           <img src="images/aarha%20logo%20white.png" alt="Aarha Logo" class="footer-logo-img" />
           <span class="s footer-slogan">- BUY A DREAM,<br/>THAT'S PLOTTED</span>
@@ -475,7 +484,7 @@
       ],
       gallery: [
         { src: "images/g1.webp", label: "Layout Plan" },
-        { src: "images/g1.webp", label: "Aerial View" },
+        { src: "images/g3.webp", label: "Aerial View" },
         { src: "images/g45.webp", label: "Grand Entrance" },
         /* { src:"images/g37.webp",  label:"Kausalya Monument" },
          { src:"images/g27.webp",  label:"Ventures Gate" },*/
@@ -527,8 +536,9 @@
       const SIZE_PATTERN = ["g-big", "", "", "g-tall", "", "g-wide"];
       document.getElementById("gallery-grid").innerHTML = D.gallery.map((g, i) => {
         const sizeClass = SIZE_PATTERN[i % SIZE_PATTERN.length];
+        const isMap = g.label.toLowerCase().includes("layout") || g.label.toLowerCase().includes("aerial") || g.label.toLowerCase().includes("plan");
         return `
-    <button class="g-cell ${sizeClass}" data-lightbox="${g.src}" data-reveal="zoom" data-reveal-delay="${(i % 5) + 1}">
+    <button class="g-cell ${sizeClass} ${isMap ? "g-map-cell" : ""}" data-lightbox="${g.src}" data-reveal="zoom" data-reveal-delay="${(i % 5) + 1}">
       <img src="${g.src}" alt="${g.label}" loading="lazy" />
       <div class="fade"></div>
       <span class="g-idx">0${i + 1}</span>
